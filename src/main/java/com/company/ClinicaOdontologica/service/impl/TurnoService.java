@@ -29,10 +29,6 @@ public class TurnoService implements ITurnoService {
         this.objectMapper = objectMapper;
     }
 
-    // Constructor vacío sin parámetros, lo utiliza JPA para instanciar las entidades
-    public TurnoService() {
-    }
-
     // Actualizo un Turno en la base de datos.
     @Override
     public Turno actualizar(Turno turno) {
@@ -71,4 +67,5 @@ public class TurnoService implements ITurnoService {
     public void eliminar(Long id){
         iTurnoRepository.deleteById(id);
     }
+
 }

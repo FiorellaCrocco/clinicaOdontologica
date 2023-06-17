@@ -22,10 +22,6 @@ public class DomicilioService implements IDomicilioService {
         this.iDomicilioRepository = iDomicilioRepository;
     }
 
-    // Constructor vacío sin parámetros, lo utiliza JPA para instanciar las entidades
-    public DomicilioService() {
-    }
-
     // Actualizo un Domicilio en la base de datos.
     @Override
     public Domicilio actualizar(Domicilio domicilio) {
@@ -39,7 +35,6 @@ public class DomicilioService implements IDomicilioService {
     public Domicilio buscarPorId(Long id) {
         Optional<Domicilio> found = iDomicilioRepository.findById(id);
         return found.orElse(null);
-
     }
 
     // Busco todos los Domicilios en la base de datos y retorno la lista obtenida de los Domicilios  al utilizar el método findAll de JpaRepository.
@@ -57,4 +52,5 @@ public class DomicilioService implements IDomicilioService {
     public void eliminar(Long id){
         iDomicilioRepository.deleteById(id);
     }
+
 }

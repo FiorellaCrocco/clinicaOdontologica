@@ -1,6 +1,8 @@
 package com.company.ClinicaOdontologica.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -8,6 +10,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "DOMICILIOS") // Establecemos el nombre de la tabla en la BD
 @Getter @Setter  // Creamos los Getters y Setters
+@NoArgsConstructor // Constructor sin parámetros
+@AllArgsConstructor // Constructor con todos los parámetros
 
 public class Domicilio {
 
@@ -20,18 +24,7 @@ public class Domicilio {
     private String localidad;
     private String provincia;
 
-    public Domicilio() {
-    }
-
     public Domicilio(String calle, String numero, String localidad, String provincia) {
-        this.calle = calle;
-        this.numero = numero;
-        this.localidad = localidad;
-        this.provincia = provincia;
-    }
-
-    public Domicilio(Long id, String calle, String numero, String localidad, String provincia) {
-        this.id = id;
         this.calle = calle;
         this.numero = numero;
         this.localidad = localidad;

@@ -29,10 +29,6 @@ public class OdontologoService implements IOdontologoService {
         this.objectMapper = objectMapper;
     }
 
-    // Constructor vacío sin parámetros, lo utiliza JPA para instanciar las entidades
-    public OdontologoService() {
-    }
-
     // Actualiza un Odontólogo en la base de datos.
     @Override
     public Odontologo actualizar(Odontologo odontologo) {

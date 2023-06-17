@@ -1,6 +1,8 @@
 package com.company.ClinicaOdontologica.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -8,6 +10,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "ODONTOLOGOS") // Establecemos el nombre de la tabla en la BD
 @Getter @Setter  // Creamos los Getters y Setters
+@NoArgsConstructor // Constructor sin parámetros
+@AllArgsConstructor // Constructor con todos los parámetros
 
 public class Odontologo {
 
@@ -19,17 +23,7 @@ public class Odontologo {
     private String apellido;
     private String matricula;
 
-    public Odontologo() {
-    }
-
     public Odontologo(String nombre, String apellido, String matricula) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.matricula = matricula;
-    }
-
-    public Odontologo(Long id, String nombre, String apellido, String matricula) {
-        this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.matricula = matricula;
@@ -44,4 +38,15 @@ public class Odontologo {
                 ", matricula='" + matricula + '\'' +
                 '}';
     }
+
+    /*  =============================== MODIFICADO ===============================
+    // Establecemos la relación con la tabla Turno del tipo uno a muchos, y definimos como Foreign Key el Id de Turno
+    // Utilizamos el patrón LAZY para establecer la inicialización al momento de recibir una solicitud
+    // Utilizamos Cascade.ALL para que se apliquen automáticamente las operaciones CRUD de Paciente en la entidad Turno.
+    // Utilizamos la propiedad nulleable true dado que puede existir un odontologo sin turno
+//    @OneToMany(fetch=FetchType.LAZY, mappedBy = "odontologo", cascade = CascadeType.ALL)
+//    //@JoinColumn(name = "turno_id", nullable = true)
+//    private List<Turno> turnos;
+ */
+
 }

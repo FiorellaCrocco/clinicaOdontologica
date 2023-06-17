@@ -29,10 +29,6 @@ public class PacienteService implements IPacienteService {
         this.objectMapper = objectMapper;
     }
 
-    // Constructor vacío sin parámetros, lo utiliza JPA para instanciar las entidades
-    public PacienteService() {
-    }
-
     // Actualizo un Paciente en la base de datos.
     @Override
     public Paciente actualizar(Paciente paciente) {
@@ -71,4 +67,5 @@ public class PacienteService implements IPacienteService {
     public void eliminar(Long id){
         iPacienteRepository.deleteById(id);
     }
+
 }
