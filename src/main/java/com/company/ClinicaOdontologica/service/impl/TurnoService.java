@@ -6,6 +6,8 @@ import com.company.ClinicaOdontologica.entity.Turno;
 import com.company.ClinicaOdontologica.repository.ITurnoRepository;
 import com.company.ClinicaOdontologica.service.ITurnoService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,6 +42,7 @@ public class TurnoService implements ITurnoService {
     // Busco un Turno por su Id, si lo encuentro retorno el TurnoDTO, sino, muestro la exception.
     @Override
     public TurnoDTO buscarPorId(Long id) throws Exception {
+        objectMapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS); // Se utiliza para solucionar el error "SerializationFeature.FAIL_ON_EMPTY_BEANS)"
         Optional<Turno> found = iTurnoRepository.findById(id);
         if(found.isPresent())
             return objectMapper.convertValue(found, TurnoDTO.class);
@@ -50,10 +53,10 @@ public class TurnoService implements ITurnoService {
     // Busco todos los Turnos en la base de datos y retorno una lista de tipo TurnoDTO con los Turnos encontrados.
     @Override
     public List<TurnoDTO> buscarTodos() {
-        ObjectMapper mapper = new ObjectMapper();
+        objectMapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS); // Se utiliza para solucionar el error "SerializationFeature.FAIL_ON_EMPTY_BEANS)"
         List<TurnoDTO> turnoDTOS = new ArrayList<>();
         for (Turno t : iTurnoRepository.findAll()){
-            turnoDTOS.add(mapper.convertValue(t,TurnoDTO.class));
+            turnoDTOS.add(objectMapper.convertValue(t,TurnoDTO.class));
         }
         return turnoDTOS;
     }

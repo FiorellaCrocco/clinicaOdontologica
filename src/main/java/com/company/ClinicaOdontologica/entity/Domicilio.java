@@ -15,9 +15,9 @@ import javax.persistence.*;
 
 public class Domicilio {
 
-    // Establecemos el Id como Primary Key de tipo secuencia
+    // Establecemos el Id como Primary Key de tipo indentity
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String calle;
     private String numero;

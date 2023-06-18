@@ -16,9 +16,9 @@ import java.time.LocalDateTime;
 
 public class Turno {
 
-    // Establecemos el Id como Primary Key de tipo secuencia
+    // Establecemos el Id como Primary Key de tipo indentity
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     // Establecemos la relación con la tabla Paciente del tipo uno a uno, y definimos como Foreign Key el Id de Paciente
@@ -34,6 +34,12 @@ public class Turno {
     private Odontologo odontologo;
 
     private LocalDateTime fecha;
+
+    public Turno(Paciente paciente, Odontologo odontologo, LocalDateTime fecha) {
+        this.paciente = paciente;
+        this.odontologo = odontologo;
+        this.fecha = fecha;
+    }
 
     @Override
     public String toString() {

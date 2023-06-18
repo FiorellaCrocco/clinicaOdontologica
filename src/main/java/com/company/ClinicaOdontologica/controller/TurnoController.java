@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/turno")
-@CrossOrigin
+//@CrossOrigin
 public class TurnoController {
 
     TurnoService turnoService;

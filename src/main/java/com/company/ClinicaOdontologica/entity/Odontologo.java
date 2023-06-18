@@ -15,9 +15,9 @@ import javax.persistence.*;
 
 public class Odontologo {
 
-    // Establecemos el Id como Primary Key de tipo secuencia
+    // Establecemos el Id como Primary Key de tipo indentity
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
     private String apellido;
@@ -38,15 +38,5 @@ public class Odontologo {
                 ", matricula='" + matricula + '\'' +
                 '}';
     }
-
-    /*  =============================== MODIFICADO ===============================
-    // Establecemos la relación con la tabla Turno del tipo uno a muchos, y definimos como Foreign Key el Id de Turno
-    // Utilizamos el patrón LAZY para establecer la inicialización al momento de recibir una solicitud
-    // Utilizamos Cascade.ALL para que se apliquen automáticamente las operaciones CRUD de Paciente en la entidad Turno.
-    // Utilizamos la propiedad nulleable true dado que puede existir un odontologo sin turno
-//    @OneToMany(fetch=FetchType.LAZY, mappedBy = "odontologo", cascade = CascadeType.ALL)
-//    //@JoinColumn(name = "turno_id", nullable = true)
-//    private List<Turno> turnos;
- */
 
 }
