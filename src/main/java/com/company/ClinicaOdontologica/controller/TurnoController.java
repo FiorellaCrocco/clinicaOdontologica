@@ -51,13 +51,8 @@ public class TurnoController {
     // En la url "/turno/{id}" utilizamos el metodo DELETE para eliminar un turno segun su ID.
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<?> eliminarTurno(@PathVariable Long id) throws Exception {
-        ResponseEntity<String> response = null;
-        if (turnoService.buscarPorId(id).equals(id)){
-            turnoService.eliminar(id);
-            response = ResponseEntity.status(HttpStatus.OK).body("Eliminado");
-        } else {
-            response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("El turno no fue encontrado");
-        }
-        return response;
+        turnoService.eliminar(id);
+        return ResponseEntity.status(HttpStatus.OK).body("Eliminado");
     }
+
 }

@@ -51,13 +51,7 @@ public class OdontologoController {
     // En la url "/odontologo/{id}" utilizamos el metodo DELETE para eliminar un odontólogo segun su ID
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<?> eliminarUnOdontologo(@PathVariable Long id){
-        ResponseEntity<String> response = null;
-        if(id!=null){
-            odontologoService.eliminar(id);
-            response = ResponseEntity.status(HttpStatus.OK).body("Eliminado");
-        } else {
-            response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("El odontologo no fue encontrado");
-        }
-        return response;
+        odontologoService.eliminar(id);
+        return ResponseEntity.status(HttpStatus.OK).body("Eliminado");
     }
 }
