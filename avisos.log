@@ -1,0 +1,60 @@
+[2023-06-19 00:59:59] [ INFO ] [ClinicaOdontologicaApplication:24] La aplicacion se encuentra en ejecucion
+[2023-06-19 01:08:42] [ INFO ] [OdontologoService:67] Se ha agregado el odontologo
+[2023-06-19 01:08:43] [ INFO ] [OdontologoService:46] Se encontro el odontologo y se convertira a DTO para ser devuelto
+[2023-06-19 01:08:43] [ INFO ] [OdontologoService:67] Se ha agregado el odontologo
+[2023-06-19 01:08:43] [ INFO ] [OdontologoService:73] Se ha eliminado el odontologo
+[2023-06-19 01:08:43] [ INFO ] [OdontologoService:67] Se ha agregado el odontologo
+[2023-06-19 01:08:43] [ INFO ] [OdontologoService:67] Se ha agregado el odontologo
+[2023-06-19 01:08:43] [ INFO ] [OdontologoService:59] Se esta iterando el array de odontologos
+[2023-06-19 01:08:43] [ INFO ] [OdontologoService:59] Se esta iterando el array de odontologos
+[2023-06-19 01:08:43] [ INFO ] [OdontologoService:59] Se esta iterando el array de odontologos
+[2023-06-19 01:08:43] [ INFO ] [OdontologoService:67] Se ha agregado el odontologo
+[2023-06-19 01:11:54] [ INFO ] [OdontologoService:67] Odontologo - guardar: Se ha agregado el odontologo
+[2023-06-19 01:11:55] [ INFO ] [OdontologoService:46] Odontologo - buscarPorId: Se encontro el odontologo y se convertira a DTO para ser devuelto
+[2023-06-19 01:11:55] [ INFO ] [OdontologoService:67] Odontologo - guardar: Se ha agregado el odontologo
+[2023-06-19 01:11:55] [ INFO ] [OdontologoService:73] Odontologo - eliminar: Se ha eliminado el odontologo
+[2023-06-19 01:11:55] [ INFO ] [OdontologoService:67] Odontologo - guardar: Se ha agregado el odontologo
+[2023-06-19 01:11:55] [ INFO ] [OdontologoService:67] Odontologo - guardar: Se ha agregado el odontologo
+[2023-06-19 01:11:55] [ INFO ] [OdontologoService:59] Odontologo - buscarTodos: Se esta iterando el array de odontologos
+[2023-06-19 01:11:55] [ INFO ] [OdontologoService:59] Odontologo - buscarTodos: Se esta iterando el array de odontologos
+[2023-06-19 01:11:55] [ INFO ] [OdontologoService:59] Odontologo - buscarTodos: Se esta iterando el array de odontologos
+[2023-06-19 01:11:55] [ INFO ] [OdontologoService:67] Odontologo - guardar: Se ha agregado el odontologo
+[2023-06-19 01:30:25] [ INFO ] [DomicilioService:52] Domicilio - buscarTodos: Se ha agregado el domicilio
+[2023-06-19 01:30:25] [ INFO ] [DomicilioService:39] Domicilio - buscarPorId: Se ha actualizado el domicilio
+[2023-06-19 01:30:25] [ INFO ] [DomicilioService:52] Domicilio - buscarTodos: Se ha agregado el domicilio
+[2023-06-19 01:30:25] [ INFO ] [DomicilioService:52] Domicilio - buscarTodos: Se ha agregado el domicilio
+[2023-06-19 01:30:25] [ INFO ] [DomicilioService:46] Domicilio - buscarTodos: Se mostrara la lista de domicilios
+[2023-06-19 01:30:25] [ INFO ] [DomicilioService:52] Domicilio - buscarTodos: Se ha agregado el domicilio
+[2023-06-19 01:30:25] [ INFO ] [DomicilioService:52] Domicilio - buscarTodos: Se ha agregado el domicilio
+[2023-06-19 01:30:25] [ INFO ] [DomicilioService:58] Domicilio - buscarTodos: Se ha eliminado el domicilio
+[2023-06-19 01:36:39] [ INFO ] [DomicilioService:52] Domicilio - buscarTodos: Se va agregar el domicilio
+[2023-06-19 01:36:39] [ INFO ] [PacienteService:71] Paciente - guardar: Se va agregar el paciente
+[2023-06-19 01:36:39] [ INFO ] [DomicilioService:52] Domicilio - buscarTodos: Se va agregar el domicilio
+[2023-06-19 01:36:39] [ INFO ] [PacienteService:71] Paciente - guardar: Se va agregar el paciente
+[2023-06-19 01:36:39] [ INFO ] [PacienteService:77] Paciente - eliminar: Se va eliminar el paciente
+[2023-06-19 01:36:39] [ INFO ] [DomicilioService:52] Domicilio - buscarTodos: Se va agregar el domicilio
+[2023-06-19 01:36:39] [ INFO ] [PacienteService:71] Paciente - guardar: Se va agregar el paciente
+[2023-06-19 01:36:39] [ INFO ] [PacienteService:71] Paciente - guardar: Se va agregar el paciente
+[2023-06-19 01:36:39] [ INFO ] [DomicilioService:46] Domicilio - buscarTodos: Se mostrara la lista de domicilios
+[2023-06-19 01:36:40] [ INFO ] [DomicilioService:52] Domicilio - buscarTodos: Se va agregar el domicilio
+[2023-06-19 01:36:40] [ INFO ] [PacienteService:71] Paciente - guardar: Se va agregar el paciente
+[2023-06-19 01:36:40] [ INFO ] [PacienteService:49] Paciente - buscarPorId: Se encontro el paciente y se convertira a DTO para ser devuelto
+[2023-06-19 01:41:32] [ INFO ] [DomicilioService:52] Domicilio - buscarTodos: Se va agregar el domicilio
+[2023-06-19 01:41:32] [ INFO ] [PacienteService:71] Paciente - guardar: Se va agregar el paciente
+[2023-06-19 01:41:32] [ INFO ] [OdontologoService:67] Odontologo - guardar: Se va agregar el odontologo
+[2023-06-19 01:41:32] [ INFO ] [TurnoService:72] Turno - guardar: Se va agregar el turno
+[2023-06-19 01:41:32] [ INFO ] [TurnoService:50] Turno - buscarPorId: Se encontro el turno y se convertira a DTO para ser devuelto
+[2023-06-19 01:41:32] [ INFO ] [DomicilioService:52] Domicilio - buscarTodos: Se va agregar el domicilio
+[2023-06-19 01:41:32] [ INFO ] [PacienteService:71] Paciente - guardar: Se va agregar el paciente
+[2023-06-19 01:41:32] [ INFO ] [OdontologoService:67] Odontologo - guardar: Se va agregar el odontologo
+[2023-06-19 01:41:32] [ INFO ] [TurnoService:72] Turno - guardar: Se va agregar el turno
+[2023-06-19 01:41:32] [ INFO ] [TurnoService:64] Turno - buscarTodos: Se esta iterando el array de turnos
+[2023-06-19 01:41:32] [ INFO ] [DomicilioService:52] Domicilio - buscarTodos: Se va agregar el domicilio
+[2023-06-19 01:41:32] [ INFO ] [PacienteService:71] Paciente - guardar: Se va agregar el paciente
+[2023-06-19 01:41:32] [ INFO ] [OdontologoService:67] Odontologo - guardar: Se va agregar el odontologo
+[2023-06-19 01:41:32] [ INFO ] [TurnoService:72] Turno - guardar: Se va agregar el turno
+[2023-06-19 01:41:33] [ INFO ] [DomicilioService:52] Domicilio - buscarTodos: Se va agregar el domicilio
+[2023-06-19 01:41:33] [ INFO ] [PacienteService:71] Paciente - guardar: Se va agregar el paciente
+[2023-06-19 01:41:33] [ INFO ] [OdontologoService:67] Odontologo - guardar: Se va agregar el odontologo
+[2023-06-19 01:41:33] [ INFO ] [TurnoService:72] Turno - guardar: Se va agregar el turno
+[2023-06-19 01:41:33] [ INFO ] [TurnoService:78] Turno - eliminar: Se va eliminar el turno
