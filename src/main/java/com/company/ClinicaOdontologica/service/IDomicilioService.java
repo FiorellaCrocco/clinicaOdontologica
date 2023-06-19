@@ -13,4 +13,8 @@ public interface IDomicilioService {
     Domicilio buscarPorId (Long id) ;
 
     List<Domicilio> buscarTodos();
+
+    Domicilio guardar(Domicilio domicilio);
+
+    void eliminar(Long id);
 }

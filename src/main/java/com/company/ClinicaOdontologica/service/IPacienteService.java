@@ -15,4 +15,7 @@ public interface IPacienteService {
 
     List<PacienteDTO> buscarTodos();
 
+    Paciente guardar(Paciente paciente);
+
+    void eliminar(Long id);
 }

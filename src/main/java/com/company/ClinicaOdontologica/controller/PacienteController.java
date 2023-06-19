@@ -48,18 +48,17 @@ public class PacienteController {
         return ResponseEntity.ok(pacienteService.actualizar(paciente));
     }
 
-    // En la url "/paciente/{id}" utilizamos el metodo DELETE para eliminar un paciente segun su ID y si no lo encuentra se dispara una Exception
-    @DeleteMapping("/{id}")
-    public void eliminarUnPaciente(@PathVariable Long id) throws Exception {
-        if (pacienteService.buscarPorId(id).equals(id)){
+    // En la url "/paciente/{id}" utilizamos el metodo DELETE para eliminar un paciente segun su ID.
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<?> eliminarUnPaciente(@PathVariable Long id) throws Exception {
+        ResponseEntity<String> response = null;
+        if (id!=null){
             pacienteService.eliminar(id);
+            response = ResponseEntity.status(HttpStatus.OK).body("Eliminado");
         } else {
-            ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("El paciente no fue encontrado");
+            response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("El paciente no fue encontrado");
         }
+        return response;
     }
-
-
-
-
 
 }

@@ -32,17 +32,15 @@ public class OdontologoService implements IOdontologoService {
     // Actualiza un Odontólogo en la base de datos.
     @Override
     public Odontologo actualizar(Odontologo odontologo) {
-        eliminar(odontologo.getId());
-        guardar(odontologo);
-        return odontologo;
+         return guardar(odontologo);   // El método guardar() utiliza .save; este lo que hace es crear si el ID = 0 pero si ID!=0 actualiza los cambios.
     }
 
     // Busca un Odontólogo por su Id, si lo encuentra retorna el OdontologoDTO, sino muestra la exception.
     @Override
     public OdontologoDTO buscarPorId(Long id) throws Exception {
-        Optional<Odontologo> found = iOdontologoRepository.findById(id);
-        if(found.isPresent())
-            return objectMapper.convertValue(found, OdontologoDTO.class);
+        Optional<Odontologo> found = iOdontologoRepository.findById(id); // Utilizo el objeto Optional que permite que "found" devuelva nulo u Odontologo
+        if(found.isPresent())  // Evaluamos si found tiene contenido
+            return objectMapper.convertValue(found, OdontologoDTO.class); // Convertimos a found que es de tipo Odontologo a OdontologoDTO.
         else
             throw new Exception("El odontologo no existe");
     }
@@ -50,9 +48,9 @@ public class OdontologoService implements IOdontologoService {
     // Busco todos los Odontólogos en la base de datos y retorno una lista de tipo OdontologoDTO con los Odontólogos encontrados.
     @Override
     public List<OdontologoDTO> buscarTodos() {
-       List<OdontologoDTO> odontologoDTOS = new ArrayList<>();
-       for (Odontologo o : iOdontologoRepository.findAll()){
-           odontologoDTOS.add(objectMapper.convertValue(o,OdontologoDTO.class));
+       List<OdontologoDTO> odontologoDTOS = new ArrayList<>();  // Creamos un ArrayList de tipo OdontologoDTO
+       for (Odontologo o : iOdontologoRepository.findAll()){    // Iteramos el array
+           odontologoDTOS.add(objectMapper.convertValue(o,OdontologoDTO.class));  // En cada iteración convertimos el objeto de tipo Odontologo a OdontologoDTO y lo agregamos al ArrayList
        }
         return odontologoDTOS;
     }

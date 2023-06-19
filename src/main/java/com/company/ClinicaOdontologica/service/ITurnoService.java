@@ -15,4 +15,7 @@ public interface ITurnoService {
 
     List<TurnoDTO> buscarTodos();
 
+    Turno guardar(Turno turno);
+
+    void eliminar(Long id);
 }

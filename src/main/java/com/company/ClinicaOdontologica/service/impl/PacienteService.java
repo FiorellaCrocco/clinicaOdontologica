@@ -23,7 +23,6 @@ public class PacienteService implements IPacienteService {
     // Para la conversión de objetos.
     private ObjectMapper objectMapper;
 
-
     // Constructor de PacienteService que permite la inyección de dependencias.
     @Autowired
     public PacienteService(IPacienteRepository iPacienteRepository, ObjectMapper objectMapper) {
@@ -34,18 +33,16 @@ public class PacienteService implements IPacienteService {
     // Actualizo un Paciente en la base de datos.
     @Override
     public Paciente actualizar(Paciente paciente) {
-        eliminar(paciente.getId());
-        guardar(paciente);
-        return paciente;
+        return guardar(paciente);
     }
 
     // Busco un Paciente por su Id, si lo encuentro retorno el PacienteDTO, sino, muestro la exception.
     @Override
     public PacienteDTO buscarPorId(Long id) throws Exception {
         objectMapper.registerModule(new JavaTimeModule()); // Se utiliza para solucionar el error "not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310""
-        Optional<Paciente> found = iPacienteRepository.findById(id);
-        if(found.isPresent())
-            return objectMapper.convertValue(found, PacienteDTO.class);
+        Optional<Paciente> found = iPacienteRepository.findById(id);  // Utilizo el objeto Optional que permite que "found" devuelva nulo o Paciente
+        if(found.isPresent())  // Evaluamos si found tiene contenido
+            return objectMapper.convertValue(found, PacienteDTO.class);  // Convertimos a found que es de tipo Paciente a PacienteDTO.
         else
             throw new Exception("El paciente no existe");
     }
@@ -53,10 +50,10 @@ public class PacienteService implements IPacienteService {
     // Busco todos los Pacientes en la base de datos y retorno una lista de tipo PacienteDTO con los Pacientes encontrados.
     @Override
     public List<PacienteDTO> buscarTodos() {
-        objectMapper.registerModule(new JavaTimeModule()); // Se utiliza para solucionar el error "not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310""
-        List<PacienteDTO> pacienteDTOS = new ArrayList<>();
-        for (Paciente p : iPacienteRepository.findAll()){
-            pacienteDTOS.add(objectMapper.convertValue(p,PacienteDTO.class));
+        objectMapper.registerModule(new JavaTimeModule()); // Se utiliza para solucionar el error "not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" "
+        List<PacienteDTO> pacienteDTOS = new ArrayList<>();  // Creamos un ArrayList de tipo PacienteDTO
+        for (Paciente p : iPacienteRepository.findAll()){    // Iteramos el array
+            pacienteDTOS.add(objectMapper.convertValue(p,PacienteDTO.class));  // En cada iteración convertimos el objeto de tipo Paciente a PacienteDTO y lo agregamos al ArrayList
         }
         return pacienteDTOS;
     }

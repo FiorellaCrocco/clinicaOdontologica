@@ -25,16 +25,14 @@ public class DomicilioService implements IDomicilioService {
     // Actualizo un Domicilio en la base de datos.
     @Override
     public Domicilio actualizar(Domicilio domicilio) {
-        eliminar(domicilio.getId());
-        guardar(domicilio);
-        return domicilio;
+        return guardar(domicilio);
     }
 
     // Busco un Domicilio por su Id, si lo encuentro retorno el Domicilio, sino muestro null.
     @Override
     public Domicilio buscarPorId(Long id) {
-        Optional<Domicilio> found = iDomicilioRepository.findById(id);
-        return found.orElse(null);
+        Optional<Domicilio> found = iDomicilioRepository.findById(id); // Utilizo el objeto Optional que permite que "found" devuelva nulo o Domicilio
+        return found.orElse(null);  // Si found no tiene contenido devolvemos null
     }
 
     // Busco todos los Domicilios en la base de datos y retorno la lista obtenida de los Domicilios  al utilizar el método findAll de JpaRepository.

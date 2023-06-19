@@ -34,18 +34,16 @@ public class TurnoService implements ITurnoService {
     // Actualizo un Turno en la base de datos.
     @Override
     public Turno actualizar(Turno turno) {
-        eliminar(turno.getId());
-        guardar(turno);
-        return turno;
+        return guardar(turno);
     }
 
     // Busco un Turno por su Id, si lo encuentro retorno el TurnoDTO, sino, muestro la exception.
     @Override
     public TurnoDTO buscarPorId(Long id) throws Exception {
         objectMapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS); // Se utiliza para solucionar el error "SerializationFeature.FAIL_ON_EMPTY_BEANS)"
-        Optional<Turno> found = iTurnoRepository.findById(id);
-        if(found.isPresent())
-            return objectMapper.convertValue(found, TurnoDTO.class);
+        Optional<Turno> found = iTurnoRepository.findById(id);  // Utilizo el objeto Optional que permite que "found" devuelva nulo o Turno
+        if(found.isPresent())  // Evaluamos si found tiene contenido
+            return objectMapper.convertValue(found, TurnoDTO.class);  // Convertimos a found que es de tipo Turno a TurnoDTO.
         else
             throw new Exception("El turno no existe");
     }
@@ -54,9 +52,9 @@ public class TurnoService implements ITurnoService {
     @Override
     public List<TurnoDTO> buscarTodos() {
         objectMapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS); // Se utiliza para solucionar el error "SerializationFeature.FAIL_ON_EMPTY_BEANS)"
-        List<TurnoDTO> turnoDTOS = new ArrayList<>();
-        for (Turno t : iTurnoRepository.findAll()){
-            turnoDTOS.add(objectMapper.convertValue(t,TurnoDTO.class));
+        List<TurnoDTO> turnoDTOS = new ArrayList<>();  // Creamos un ArrayList de tipo TurnoDTO
+        for (Turno t : iTurnoRepository.findAll()){    // Iteramos el array
+            turnoDTOS.add(objectMapper.convertValue(t,TurnoDTO.class));  // En cada iteración convertimos el objeto de tipo Turno a TurnoDTO y lo agregamos al ArrayList
         }
         return turnoDTOS;
     }

@@ -15,4 +15,8 @@ public interface IOdontologoService {
 
     List<OdontologoDTO> buscarTodos();
 
+    Odontologo guardar(Odontologo odontologo);
+
+    void eliminar(Long id);
+
 }

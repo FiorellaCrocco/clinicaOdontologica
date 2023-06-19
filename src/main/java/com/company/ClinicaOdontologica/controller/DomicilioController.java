@@ -46,13 +46,16 @@ public class DomicilioController {
         return ResponseEntity.ok(domicilioService.actualizar(domicilio));
     }
 
-    // En la url "/domicilio/{id}" utilizamos el metodo DELETE para eliminar un domicilio segun su ID y si no lo encuentra se dispara una Exception
-    @DeleteMapping("/{id}")
-    public void eliminarDomicilio(@PathVariable Long id) throws Exception {
-        if (domicilioService.buscarPorId(id).equals(id)){
+    // En la url "/domicilio/{id}" utilizamos el metodo DELETE para eliminar un domicilio segun su ID.
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<?> eliminarDomicilio(@PathVariable Long id) throws Exception {
+        ResponseEntity<String> response = null;
+        if (id!=null){
             domicilioService.eliminar(id);
+            response = ResponseEntity.status(HttpStatus.OK).body("Eliminado");
         } else {
-            ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("El domicilio no fue encontrado");
+            response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("El domicilio no fue encontrado");
         }
+        return response;
     }
 }

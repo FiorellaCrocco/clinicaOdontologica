@@ -48,13 +48,16 @@ public class OdontologoController {
         return ResponseEntity.ok(odontologoService.actualizar(odontologo));
     }
 
-    // En la url "/odontologo/{id}" utilizamos el metodo DELETE para eliminar un odontólogo segun su ID y si no lo encuentra se dispara una Exception
-    @DeleteMapping("/{id}")
-    public void eliminarUnOdontologo(@PathVariable Long id) throws Exception {
-        if (odontologoService.buscarPorId(id).equals(id)){
+    // En la url "/odontologo/{id}" utilizamos el metodo DELETE para eliminar un odontólogo segun su ID
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<?> eliminarUnOdontologo(@PathVariable Long id){
+        ResponseEntity<String> response = null;
+        if(id!=null){
             odontologoService.eliminar(id);
+            response = ResponseEntity.status(HttpStatus.OK).body("Eliminado");
         } else {
-            ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("El odontologo no fue encontrado");
+            response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("El odontologo no fue encontrado");
         }
+        return response;
     }
 }

@@ -21,16 +21,16 @@ public class Turno {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Establecemos la relación con la tabla Paciente del tipo uno a uno, y definimos como Foreign Key el Id de Paciente
+    // Establecemos la relación con la tabla Paciente del tipo muchos a uno, y definimos como Foreign Key el Id de Paciente
     // Utilizamos el patrón LAZY para establecer la inicialización al momento de recibir una solicitud
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="paciente_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="paciente_id", nullable = false)
     private Paciente paciente;
 
-    // Establecemos la relación con la tabla Odontologo del tipo uno a uno, y definimos como Foreign Key el Id de Odontologo
+    // Establecemos la relación con la tabla Odontologo del tipo muchos a uno, y definimos como Foreign Key el Id de Odontologo
     // Utilizamos el patrón LAZY para establecer la inicialización al momento de recibir una solicitud
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="odontologo_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="odontologo_id", nullable = false)
     private Odontologo odontologo;
 
     private LocalDateTime fecha;
@@ -50,23 +50,5 @@ public class Turno {
                 ", fecha=" + fecha +
                 '}';
     }
-
-    /*  =============================== MODIFICADO ===============================
-    // Establecemos la relación con la tabla Paciente del tipo uno a uno, y definimos como Foreign Key el Id de Paciente
-    // Utilizamos la anotacion JsonIgnore para evitar un bucle infinito al ser una relación bidireccional
-    // Utilizamos el patrón LAZY para establecer la inicialización al momento de recibir una solicitud
-    @OneToOne(fetch = FetchType.LAZY)
-    //@JsonIgnore
-    @JoinColumn(name="paciente_id")
-    private Paciente paciente;
-
-    // Establecemos la relación con la tabla Odontologo del tipo muchos a uno, y definimos como Foreign Key el Id de Odontologo
-    // Utilizamos la anotacion JsonIgnore para evitar un bucle infinito al ser una relación bidireccional
-    // Utilizamos el patrón LAZY para establecer la inicialización al momento de recibir una solicitud
-    @ManyToOne(fetch = FetchType.LAZY)
-   //@JsonIgnore
-    @JoinColumn(name="odontologo_id")
-    private Odontologo odontologo;
- */
 
 }
