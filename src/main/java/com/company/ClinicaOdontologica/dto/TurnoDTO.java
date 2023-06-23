@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 
 public class TurnoDTO {
 
+    private Long id;
     private Paciente paciente;
     private Odontologo odontologo;
     private LocalDateTime fecha;

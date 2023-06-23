@@ -11,7 +11,7 @@ import lombok.Setter;
 @JsonIgnoreProperties(ignoreUnknown = true)   // Definimos que se ignoren los atributos que no están detallados abajo (El ID)
 
 public class PacienteDTO {
-
+    private Long id;
     private String nombre, apellido, DNI, email;
     private Domicilio domicilio;
 
