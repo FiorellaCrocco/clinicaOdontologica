@@ -30,11 +30,12 @@ window.addEventListener('load', function () {
     fetch(url, settings)
       .then(response => response.json())
       .then(data => {
-        // Manejar la respuesta del servidor
+       location.reload();
       })
       .catch(error => {
         alert("Error: " + error);
       });
+
   });
 });
 

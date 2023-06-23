@@ -63,12 +63,13 @@ class PacienteServiceTest {
     }
 
     @Test
+    @Transactional
     public void testBuscarTodosPacientes(){
         iDomicilioService.guardar(domicilio1);
         iPacienteService.guardar(paciente);
         iPacienteService.guardar(paciente1);
 
-        assertNotNull(iDomicilioService.buscarTodos());
+        assertNotNull(iPacienteService.buscarTodos());
     }
 
     @Test

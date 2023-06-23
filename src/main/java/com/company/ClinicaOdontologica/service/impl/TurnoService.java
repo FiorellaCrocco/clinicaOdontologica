@@ -28,7 +28,6 @@ public class TurnoService implements ITurnoService {
     private ObjectMapper objectMapper;
 
     // Constructor de TurnoService que permite la inyección de dependencias.
-    @Autowired
     public TurnoService(ITurnoRepository iTurnoRepository, ObjectMapper objectMapper) {
         this.iTurnoRepository = iTurnoRepository;
         this.objectMapper = objectMapper;

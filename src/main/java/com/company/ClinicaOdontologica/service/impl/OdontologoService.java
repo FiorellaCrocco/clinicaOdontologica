@@ -25,7 +25,6 @@ public class OdontologoService implements IOdontologoService {
     private final ObjectMapper objectMapper;
 
     // Constructor de OdontologoService que permite la inyección de dependencias.
-    @Autowired
     public OdontologoService(IOdontologoRepository iOdontologoRepository, ObjectMapper objectMapper) {
         this.iOdontologoRepository = iOdontologoRepository;
         this.objectMapper = objectMapper;

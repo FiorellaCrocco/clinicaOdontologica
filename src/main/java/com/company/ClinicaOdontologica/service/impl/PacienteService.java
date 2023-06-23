@@ -27,7 +27,6 @@ public class PacienteService implements IPacienteService {
     private ObjectMapper objectMapper;
 
     // Constructor de PacienteService que permite la inyección de dependencias.
-    @Autowired
     public PacienteService(IPacienteRepository iPacienteRepository, ObjectMapper objectMapper) {
         this.iPacienteRepository = iPacienteRepository;
         this.objectMapper = objectMapper;

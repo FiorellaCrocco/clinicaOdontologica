@@ -18,7 +18,6 @@ public class TurnoController {
     TurnoService turnoService;
 
     // Constructor de TurnoController que permite la inyección de dependencias.
-    @Autowired
     public TurnoController(TurnoService turnoService) {
         this.turnoService = turnoService;
     }

@@ -16,7 +16,6 @@ public class DomicilioController {
     DomicilioService domicilioService;
 
     // Constructor de DomicilioController que permite la inyección de dependencias.
-    @Autowired
     public DomicilioController(DomicilioService domicilioService) {
         this.domicilioService = domicilioService;
     }

@@ -5,7 +5,6 @@ import com.company.ClinicaOdontologica.entity.Domicilio;
 import com.company.ClinicaOdontologica.repository.IDomicilioRepository;
 import com.company.ClinicaOdontologica.service.IDomicilioService;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +19,6 @@ public class DomicilioService implements IDomicilioService {
     private IDomicilioRepository iDomicilioRepository;
 
     // Constructor de DomicilioService que permite la inyección de dependencias.
-    @Autowired
     public DomicilioService(IDomicilioRepository iDomicilioRepository) {
         this.iDomicilioRepository = iDomicilioRepository;
     }

@@ -18,7 +18,6 @@ public class OdontologoController {
     OdontologoService odontologoService;
 
     // Constructor de OdontologoController que permite la inyección de dependencias.
-    @Autowired
     public OdontologoController(OdontologoService odontologoService) {
         this.odontologoService = odontologoService;
     }

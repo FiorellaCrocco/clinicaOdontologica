@@ -18,7 +18,6 @@ public class PacienteController {
     PacienteService pacienteService;
 
     // Constructor de PacienteController que permite la inyección de dependencias.
-    @Autowired
     public PacienteController(PacienteService pacienteService) {
         this.pacienteService = pacienteService;
     }
